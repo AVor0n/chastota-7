@@ -1,0 +1,9 @@
+{
+  "name": "chastota7",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node tools/check.mjs",
+    "build": "node tools/build.mjs"
+  }
+}
