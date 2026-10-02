@@ -6,7 +6,12 @@
 
 ## Где играть
 
-Игра выложена на https://chastota-7.vercel.app — открыть на телефоне. Каждый пуш в `main` выкладывается туда сам (Vercel; настройки в `vercel.json`, запасной вариант для Netlify в `netlify.toml`).
+Открыть на телефоне:
+
+- https://avor0n.github.io/chastota-7/ (GitHub Pages)
+- https://chastota-7.vercel.app (Vercel)
+
+Каждый пуш в `main` выкладывается на оба адреса сам: на Pages через `.github/workflows/pages.yml`, на Vercel по настройкам из `vercel.json`. Для Netlify есть запасной `netlify.toml`.
 
 ## Как запустить локально
 
