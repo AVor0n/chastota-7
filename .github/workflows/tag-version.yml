@@ -1,0 +1,23 @@
+# Ставит тег v<номер из VERSION> на коммит, который поменял номер версии.
+name: Тег версии
+on:
+  push:
+    branches: [main]
+    paths: [VERSION]
+permissions:
+  contents: write
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: VERSION
+      - run: |
+          tag="v$(tr -d '[:space:]' < VERSION)"
+          if git ls-remote --exit-code --tags origin "refs/tags/$tag" >/dev/null; then
+            echo "$tag уже есть"
+          else
+            git tag "$tag" "$GITHUB_SHA"
+            git push origin "$tag"
+          fi
